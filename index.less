@@ -1047,17 +1047,19 @@
                 width:12px;
                 height:12px;
                 margin-top: 3px;
-                background-color: var(--keyColor) !important;
+                *{
+                    background-color: var(--keyColor) !important;
+                }
             }
             .heart-unfilled {
-                opacity: 0;
+                display: none;
             }
             .cd-mediaitem-list-item:hover{
-                .heart-icon{
+                .heart-unfilled {
                     display: flex;
                 }
-                .heart-unfilled {
-                    opacity: 1;
+                .popular{
+                    display: none;
                 }
             }
             &.playlist-page {
