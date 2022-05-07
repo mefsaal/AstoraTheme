@@ -102,8 +102,7 @@
         }
 
         .menu-panel .menu-panel-body {
-            background-color: var(--menuBackgroundColor);
-            backdrop-filter : blur(var(--blurSmall));
+            background-color: var(--menuBackgroundColor);        
             color           : var(--textColor);
 
             & .menu-body {
@@ -134,8 +133,7 @@
         .modal-fullscreen {
             background: var(--searchBackgroundColor);
 
-            .modal-window {
-                backdrop-filter: blur(var(--blurSmall));
+            .modal-window {                
                 background     : transparent;
 
                 .castPlayIndicator {
@@ -419,6 +417,22 @@
             overflow-y: scroll;
             overflow-y: overlay;
             height: 86%;
+        }
+
+        .app-sidebar-header-text {
+            background-image: none
+        }
+                
+        .app-sidebar-header-text:hover {
+            background-image: red
+        }
+
+        .app-sidebar-header-text.collapsed {
+            background-image: none
+        }
+
+        .app-sidebar-header-text.collapsed:hover {
+            background-image: red
         }
 
         #app-content {
@@ -1437,8 +1451,7 @@
         }
 
         .menu-panel .menu-panel-body {
-            background-color: var(--color2);
-            backdrop-filter : blur(var(--blurSmall));
+            background-color: var(--color2);         
             color           : var(--textColor);
         }
     }
