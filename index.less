@@ -1047,16 +1047,17 @@
                 width:12px;
                 height:12px;
                 margin-top: 3px;
-                *{
-                    background-color: var(--keyColor) !important;
-                }
+                background-color: var(--keyColor) !important;
             }
             .heart-unfilled {
-                display: none;
+                opacity: 0.3;
             }
             .cd-mediaitem-list-item:hover{
-                .heart-unfilled {
+                .heart-icon{
                     display: flex;
+                }
+                .heart-unfilled {
+                    opacity: 1;
                 }
                 .popular{
                     display: none;
