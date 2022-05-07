@@ -145,6 +145,7 @@
                 .modal-lowercontent,
                 .modal-search {
                     background : var(--modalHeaderColor);
+                    backdrop-filter: blur(var(--blurSmall));
                     color      : var(--textColor);
                     font-weight: bold;
 
@@ -773,8 +774,34 @@
             }
 
             .app-chrome--right {
-                // margin-right: -20px;
                 z-index: 1;
+                
+                .app-chrome-item.volume {
+                    input {
+                        background: #a5a8ba00;
+                        box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+        
+                        &::-webkit-slider-thumb {
+                            opacity           : 1;
+                            transform         : scale(1);
+                            -webkit-appearance: none;
+                            appearance        : none;
+                            width             : 16px;
+                            height            : 16px;
+                            border-radius     : 100%;
+                            background        : #040707e0;
+                            background-image  : radial-gradient(var(--songProgressColor) 2px, transparent 3px, transparent 10px);
+                            cursor            : default;
+                            transition        : opacity .10s var(--appleEase), transform .10s var(--appleEase);
+                            box-shadow        : inset 0px 0px 0px 1px rgba(5, 0, 0, 0);
+        
+                            &:hover {
+                                opacity         : 1;
+                                background-image: radial-gradient(var(--songProgressColor) 3px, transparent 4px, transparent 10px);
+                            }
+                        }
+                    }
+                }                
             }
 
             &::before {
