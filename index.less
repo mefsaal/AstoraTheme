@@ -13,10 +13,10 @@
         --keyColor                : #f31c92;
         --buttonAccent            : #b406b4;
         --buttonAccentPressed     : #b600e4;
-        --border                  : 1px solid rgba(68, 68, 68, 0.4);
+        --border                  : 0px;
         --topBarColor             : rgba(45, 45, 45, 0.205);
         --linearGradient          : linear-gradient(-90deg, transparent 0%, rgba(0, 0, 0, 0.377) 10%, rgba(0, 0, 0, 0.507) 90%, transparent 100%);
-        --mediaBarColor           : rgba(0, 0, 0, 0.199);
+        --mediaBarColor           : rgba(0, 0, 0, 0);
         --songProgressColor       : #c0046c;
         --blurSmall               : 8px;
         --blurMedium              : 32px;
@@ -24,7 +24,7 @@
         --artistHoverColor        : rgba(250, 35, 59, 0.8);
         --menuBackgroundColor     : rgba(0, 0, 0, 0);
         --selectBackground        : rgba(0, 0, 0, 0);
-        --selectBorder            : 1px solid rgba(100, 100, 100, 0);
+        --selectBorder            : 0px;
         --UIKitWhite              : white;
         --UIKitWhiteTextColor     : #333;
         --UIKitBlack              : rgba(0, 0, 0, 0);
@@ -286,8 +286,9 @@
 
             .app-chrome--center {
                 .app-chrome-item.playback-controls {
-                    width           : 100%;
+                    width           : 95%;
                     max-width       : initial;
+                    border:var(--border);
                     background-color: var(--mediaBarColor);
                 }
             }
@@ -1474,7 +1475,7 @@
             --keyColor                : #d60017;
             --buttonAccent            : #d60017;
             --buttonAccentPressed     : #bb0000;
-            --border                  : 1px solid rgba(68, 68, 68, 0.4);
+            --border                  : 0px;
             --topBarColor             : rgba(235, 235, 235, 0.9);
             --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
             --mediaBarColor           : rgba(255, 255, 255, 1);
@@ -1486,7 +1487,7 @@
             --artistHoverColor        : rgba(250, 35, 59, 0.8);
             --menuBackgroundColor     : rgba(250, 250, 250, 0);
             --selectBackground        : rgba(238, 238, 238, 0);
-            --selectBorder            : 1px solid rgba(100, 100, 100, 0.2);
+            --selectBorder            : 0px;
             --UIKitWhite              : white;
             --UIKitWhiteTextColor     : #333;
             --UIKitBlack              : rgba(0, 0, 0, 0.2);
@@ -1871,7 +1872,7 @@
         --keyColor                : #d60017;
         --buttonAccent            : #d60017;
         --buttonAccentPressed     : #bb0000;
-        --border                  : 1px solid rgba(68, 68, 68, 0.4);
+        --border                  : 0px;
         --topBarColor             : rgba(235, 235, 235, 0.9);
         --linearGradient          : linear-gradient(-90deg, transparent 0%, black 10%, black 90%, transparent 100%);
         --mediaBarColor           : rgba(255, 255, 255, 1);
@@ -1883,7 +1884,7 @@
         --artistHoverColor        : rgba(250, 35, 59, 0.8);
         --menuBackgroundColor     : rgba(250, 250, 250, 0.8);
         --selectBackground        : #eee;
-        --selectBorder            : 1px solid rgba(100, 100, 100, 0.2);
+        --selectBorder            : 0px;
         --UIKitWhite              : white;
         --UIKitWhiteTextColor     : #333;
         --UIKitBlack              : rgba(0, 0, 0, 0.2);
