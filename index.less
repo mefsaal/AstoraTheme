@@ -408,6 +408,14 @@
         }
     }
 
+    .app-sidebar-header-text {
+        background-image: none
+    }
+    
+    .app-sidebar-header-text.collapsed {
+        background-image: none
+    }
+
     #app.twopanel {
         #app-sidebar {
             z-index: 3;
@@ -419,15 +427,7 @@
             overflow-y: overlay;
             height: 86%;
         }
-
-        .app-sidebar-header-text {
-            background-image: none
-        }
-
-        .app-sidebar-header-text.collapsed {
-            background-image: none
-        }
-
+        
         #app-content {
             z-index   : 1;
             height    : 100vh;
