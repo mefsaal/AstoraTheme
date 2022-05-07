@@ -1,18 +1,12 @@
 {
-    "name": "Astora Theme",
+    "name": "LasCet Theme",
     "description": "Some themes for Astora Project",
-    "version": "1.1.0",
+    "version": "1.5.0",
     "author": "Astora",
     "github_repo": "mefsaal/AstoraTheme",
     "directives": {
-        "windowLayout": {
-            "value": "twopanel"
-        },
         "lcdArtworkSize": {
             "value": 100
-        },
-        "appNavigation": {
-            "value": "seperate"
         }
     }
 }
