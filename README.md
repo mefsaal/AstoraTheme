@@ -1,4 +1,6 @@
-# Groovy for [Cider](https://cider.sh/)
-![groovy](https://user-images.githubusercontent.com/49113086/158249623-126b78c5-fe52-46d3-b393-42d7662b778b.png)
+# LasCet for [Cider](https://cider.sh/)
+![LasCet Remond](images/image1.png)
+![LasCet Cupertino](images/image2.png)
+[LasCet Options](images/image3.png)
 
-Theme heavily inspired by Groove Music and Media Player found on Windows 10/11
+Theme heavily inspired in Itheme, Groovy and other themes.
