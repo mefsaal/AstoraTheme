@@ -3,7 +3,7 @@
     "description": "Some themes for Astora Project",
     "version": "1.5.0",
     "author": "Astora",
-    "github_repo": "mefsaal/AstoraTheme",
+    "github_repo": "mefsaal/LasCet-Theme",
     "directives": {
         "lcdArtworkSize": {
             "value": 100
