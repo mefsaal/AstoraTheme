@@ -5,7 +5,7 @@
     #app {
         --color1                  : rgba(0, 0, 0, 0);
         --color2                  : rgba(0, 0, 0, 0);
-        --color3                  : rgba(0, 0, 0, 0.432);
+        --color3                  : rgba(0, 0, 0, 0);
         --fontStyle               : : "Pretendard Variable", "Inter var experimental", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-family               : var(--fontStyle);
         --textColor               : white !important;
@@ -15,7 +15,7 @@
         --buttonAccent            : #b406b4;
         --buttonAccentPressed     : #b600e4;
         --border                  : 0px;
-        --topBarColor             : rgba(45, 45, 45, 0.205);
+        --topBarColor             : rgba(0, 0, 0, 0);
         --linearGradient          : linear-gradient(-90deg, transparent 0%, rgba(0, 0, 0, 0.377) 10%, rgba(0, 0, 0, 0.507) 90%, transparent 100%);
         --mediaBarColor           : rgba(0, 0, 0, 0);
         --songProgressColor       : #c0046c;
@@ -41,9 +41,9 @@
         --volumeThumbColor        : rgb(80, 80, 80);
         --volumeTrackColor        : rgba(200, 200, 200, 0.5);
         --playlistButtonColor     : rgba(100, 100, 100, 0.5);
-        --userHoverColor          : rgba(100, 100, 100, 0.2);
+        --userHoverColor          : rgba(0, 0, 0, 0);
         --modalContentColor       : rgba(36, 36, 36, 0.4);
-        --modalHeaderColor        : rgba(0, 0, 0, 0.3);
+        --modalHeaderColor        : rgba(0, 0, 0, 0);
 
         .fullscreen-view .tab-toggles div {
             width        : 5vh;
@@ -103,6 +103,7 @@
         }
 
         .menu-panel .menu-panel-body {
+            margin-top: var(--chromeHeight1);
             background-color: var(--menuBackgroundColor);        
             color           : var(--textColor);
 
@@ -241,7 +242,7 @@
         .app-chrome {
 
             & .app-chrome-item .shuffle {
-                margin-left: 4vw;
+                margin-left: 0;
             }
 
             .app-chrome--left {
@@ -437,24 +438,26 @@
     #app.twopanel {
         #app-sidebar {
             z-index: 3;
+            margin-top: var(--chromeHeight1);
         }
 
         .app-sidebar-content{
             padding: 8px;
             overflow-y: scroll;
             overflow-y: overlay;
-            height: 86%;
+            height: calc(100% - var(--chromeHeight2));
         }
         
         #app-content {
             z-index   : 1;
-            height    : 100vh;
-            margin-top: calc(-1 * var(--chromeHeight1));
+            margin-top: var(--chromeHeight1);
 
             .content-inner {
                 padding-bottom: 100px;
                 z-index       : 1;
-                margin-top: 45px;
+                
+                top: calc var(--navigationBarHeight);
+                
             }
         }
 
@@ -463,12 +466,12 @@
         }
 
         .app-drawer {
-            height    : calc(100% - var(--chromeHeight2) + var(--chromeHeight1));
-            margin-top: calc(-1 * var(--chromeHeight1));
+            height    : calc(100% - var(--chromeHeight2));
+            margin-top : calc(-45px - var(--chromeHeight1));
         }
 
         .app-chrome {
-            z-index   : 5;
+            z-index   : 6;
             background: transparent;
 
             &::before {
@@ -509,13 +512,20 @@
                     .playback-info {
                         width      : 100%;
                         margin-left: 30px;
+
+                        .chrome-icon-container {
+                            display: flex;
+                            position: fixed;
+                            right: 0px;
+                        }
                     }
                 }
 
                 .app-chrome--center {
-                    flex-direction: inherit;
+                    flex-direction: row-reverse;
                     align-items: center;
-                    margin-left: 25px;
+                    margin-left: 15px;
+                    margin-right: 15px;
 
                     .playback-button.play,
                     .playback-button.pause {
