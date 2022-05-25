@@ -312,7 +312,7 @@
             backdrop-filter : blur(var(--blurSmall)) !important;
             background-color: var(--color2);
             position        : relative;
-            top: var(--chromeHeight);
+            top: var(--chromeHeight1);
         }
     }
 
@@ -441,6 +441,13 @@
             margin-top: var(--chromeHeight1);
         }
 
+        .usermenu-body {
+            backdrop-filter : blur(var(--blurSmall)) !important;
+            background-color: var(--color2);
+            position        : relative;
+            top: 0px;
+        }
+
         .app-sidebar-content{
             padding: 8px;
             overflow-y: scroll;
@@ -468,6 +475,8 @@
         .app-drawer {
             height    : calc(100% - var(--chromeHeight2));
             margin-top : calc(-45px - var(--chromeHeight1));
+            border: 0px;
+            background: var(--color1);
         }
 
         .app-chrome {
