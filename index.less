@@ -611,6 +611,33 @@
                 
                     }
                 
+                    input[type=range] {
+                        height                  : 5px;
+                        @shadowColor            : #771196;
+                        --songProgressBackground: #b2a5ba;
+                        box-shadow              : 0px 0px 0px 1px rgba(0 0 0 / 10%);
+        
+                        &::-webkit-slider-thumb {
+                            opacity           : 1;
+                            transform         : scale(1);
+                            -webkit-appearance: none;
+                            appearance        : none;
+                            width             : 20px;
+                            height            : 20px;
+                            border-radius     : 100%;
+                            background        : #434444a2;
+                            background-image  : radial-gradient(var(--keyColor) 4px, transparent 5px, transparent 10px);
+                            cursor            : default;
+                            transition        : opacity .10s var(--appleEase), transform .10s var(--appleEase);
+                            box-shadow        : inset 0px 0px 0px 1px rgba(255, 255, 255, 0.4);
+        
+                            &:hover {
+                                opacity         : 1;
+                                background-image: radial-gradient(var(--keyColor) 5px, transparent 6px, transparent 10px);
+                            }
+                        }
+                    }
+
                     .app-chrome-playback-duration .song-progress {
                         bottom: 7px;
                         width:  85%;
