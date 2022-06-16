@@ -55,9 +55,9 @@
         --modalContentColor       : rgba(36, 36, 36, 0.4);
         --modalHeaderColor        : rgba(0, 0, 0, 0);
         --glassFilter             : blur(32px) saturate(260%);
-        --glassFilter2            : blur(32px) saturate(180%);
-        --glassFilter3            : blur(32px) saturate(210%);
-        --glassFilter4            : blur(10px) saturate(180%);
+        --glassFilter2            : blur(36px) saturate(200%);
+        --glassFilter3            : blur(28px) saturate(160%);
+        --glassFilter4            : blur(15px) saturate(180%);
 
         .fullscreen-view .tab-toggles div {
             width        : 5vh;
@@ -283,18 +283,6 @@
 
                     }
 
-                    &:active {
-                        background-image: none;
-                        outline         : none;
-                    }
-                }
-
-                .app-mainmenu::after {
-                    content    : "Cider";
-                    font-size  : 2em;
-                    font-weight: bold;
-                    color      : var(--textColorLighter);
-                    margin-left: 40px;
                 }
 
                 & .app-chrome-item:nth-of-type(2) {
@@ -420,7 +408,7 @@
         #app-sidebar {
             z-index             : 3;
             padding-top         : var(--chromeHeight1);
-            background          : var(--menuBackgroundColor);
+            background          : rgba(46, 46, 46, 50%);
             backdrop-filter     : var(--glassFilter2);
             
             .app-sidebar-content{
@@ -453,50 +441,44 @@
 
         #app-content {
             z-index             : 1;
-            /*margin-top          : var(--chromeHeight1);*/
+            height              : calc(100% - var(--chromeHeight1));
+            bottom              :var(--chromeHeight1) ;
             background          : var(--menuBackgroundColor);
-            backdrop-filter     : var(--glassFilter2);
+            backdrop-filter     : var(--glassFilter2) !important;
 
-            .content-inner {
-                padding-bottom      : 100px;
-                z-index             : 1;                
-                top                 :var(--navigationBarHeight);                
+            .content-inner {            
+                top                 :var(--chromeHeight1);
+            }
+
+            .playlist-page{
+                padding: 32px;
+                padding-top: 25px;
             }
         }
         
-        .app-navigation {
-            height: calc(100% - var(--chromeHeight1));
-        }
-
-        .app-drawer {
-            margin-top: -20px;
-            border: 0px;
-            background: var(--color1);
+        .app-drawer {            
+            top             : var(--chromeHeight1);
+            border          : 0px;
+            background      : var(--color1);
+            bottom          : var(--chromeHeight2);
+            border-radius   : 16px;
+            height          : auto;
+            backdrop-filter : var(--glassFilter4);
         }
 
         .app-chrome {
             z-index   : 6;
             background: transparent;
 
-            &::before {
-                display: none;
-            }
-
-            .app-mainmenu {
-                z-index: 5;
-            }
-
             &.chrome-bottom {
                 position        : fixed;
                 bottom          : 0;
-                //width           : calc(100vw - 0px);
-                margin-left     : 0px;
-                background-color: rgba(30, 30, 30, 0.3);
-                backdrop-filter: var(--glassFilter3);
-
-                .app-chrome-item:nth-of-type(2):not(.generic) {
-                    margin-left: 0;
-                }               
+                border-radius   : 16px;
+                width           : auto;
+                right           : 1px;
+                left            : 1px;
+                background-color: var(--color1);
+                backdrop-filter : var(--glassFilter3);  
 
                 .app-chrome--left {
 
@@ -517,8 +499,9 @@
                     }
 
                     .playback-info {
-                        width      : 100%;
-                        margin-left: 30px;                        
+                        width           : 100%;
+                        margin-left     : 30px;
+                        display         : inherit;                     
 
                         .chrome-icon-container {
                             display: flex;
@@ -529,11 +512,11 @@
                 }
 
                 .app-chrome--center {
-                    flex-direction: row-reverse;
-                    align-items: center;
-                    margin-left: 15px;
-                    margin-right: 15px;
-                    width: inherit;
+                    flex-direction  : row-reverse;
+                    align-items     : center;
+                    margin-left     : 15px;
+                    margin-right    : 15px;
+                    width           : -webkit-fill-available;
 
                     .playback-button.play,
                     .playback-button.pause {
@@ -708,26 +691,48 @@
             bottom: unset;
         }
 
-        .app-chrome:not(.chrome-bottom) .app-chrome--center {
+        .app-chrome:not(.chrome-bottom){ 
             
-            .top-nav-group {
-            background: rgba(0, 0, 0, 4%);
-            height: 30px;
-            width: 100%;
-
-                .app-sidebar-item {
-                    border: none;
-                    backdrop-filter: var(--glassFilter4);
-                    height: 100%;
-                    position: relative;
+            .app-chrome--left{
+                .app-mainmenu,
+                .app-mainmenu.active {
+                    border-radius        : 50%;
+                    background-repeat    : no-repeat;
+                    width                : 35px;
+                    height               : 35px;
+                    background-size      : contain;
                 }
+             }
 
-                .app-sidebar-item.active{
-                    background-color: #00000005;
-                    backdrop-filter: var(--glassFilter4);
+            .app-chrome--center {
+            
+                .top-nav-group {
+                background: rgba(0, 0, 0, 4%);
+                height: 30px;
+                width: 100%;
+
+                    .app-sidebar-item {
+                        border: none;
+                        backdrop-filter: var(--glassFilter4);
+                        height: 100%;
+                        position: relative;
+                    }
+
+                    .app-sidebar-item.active{
+                        background-color: #00000005;
+                        backdrop-filter: var(--glassFilter4);
+                    }
+                }
+            }
+
+            .app-chrome--right{
+                .search-input-container{
+                    .search-hints-container{
+                    }
                 }
             }
         }
+
     }
 
     #app-main {
@@ -736,7 +741,7 @@
 
         // Mac Style side-menu
         #app-sidebar {
-            background: var(--menuBackgroundColor) !important;
+            background: rgba(46, 46, 46, 50%);
             backdrop-filter: var(--glassFilter2) !important;
             padding-top: 0px;
 
@@ -804,8 +809,17 @@
             background: var(--menuBackgroundColor);
         }
 
-        .github-themes-page .repos-list .list-group-item {
-            background: transparent;
+        .github-themes-page{
+            padding         : 32px;
+            padding-left    : 16px;
+            padding-right   : 16px;
+
+            .repos-list {
+
+                .list-group-item {
+                    background: transparent;
+                }
+            }
         }
 
         .app-chrome {
@@ -876,7 +890,6 @@
                 // change Cider Logo to profile picture
                 .app-mainmenu,
                 .app-mainmenu.active {
-                    background       : var(--cvar-userprofileimg, url('/assets/cider-round.svg'));
                     border-radius    : 50%;
                     background-repeat: no-repeat;
                     width            : 35px;
@@ -933,7 +946,10 @@
 
                     .mediaitem-artwork {
                         border-radius: 5px;
+                    }
 
+                    .mediaitem-artwork--img {
+                        image-rendering: -webkit-optimize-contrast !important;
                     }
                 }
 
@@ -992,14 +1008,15 @@
 
                 .audio-type {
                     margin-right: 10px;
-                    margin-top  : -12px;
+                    margin-top  : 12px;
                 }
 
                 .playback-info {
-                    position: absolute;
-                    height  : 100%;
-                    left    : 50px;
-                    width   : calc(100% - 50px);
+                    position        : absolute;
+                    height          : 100%;
+                    left            : 50px;
+                    width           : calc(100% - 50px);
+                    display         : -webkit-box;
                 }
             }
         }
@@ -1025,6 +1042,10 @@
                 &:hover {
                     transform : scale(1.1);
                     transition: transform 0.2s var(--appleEase) 0.1s;
+                }
+
+                .info-rect-card{
+                    display: flex;
                 }
             }
 
@@ -1178,6 +1199,8 @@
             }
 
             &.settings-page {
+                padding-left        : 16px;
+                padding-right       : 16px;
                 .md-option-container .md-option-line:not(:last-child) {
                     border-bottom: var(--selectBorder);
                 }
@@ -1185,13 +1208,20 @@
 
             &.home-page {
                 top: var(--chromeHeight1);
+
+                .well.artistfeed-well{
+                    border-radius   : 16px;
+                    background      : rgb(128 128 128 / 10%);
+                }
             }
 
         }
         
         // Style New Artists Page
         .library-artists-page {
-
+            padding             : 32px;
+            padding-left        : 16px;
+            padding-right       : 16px;
             .podcasts-list {
                 background: var(--menuBackgroundColor);
                 padding-top: 14px;
@@ -1211,6 +1241,11 @@
                     transition      : 0.1s ease-in-out;
                 }
             }
+
+            .inner-container .episodes-list{
+                border-radius: 16px;
+            }
+
         }
 
         // Style Buttons
@@ -1324,7 +1359,7 @@
 
         .playlist-page {
             .playlist-display {
-                box-shadow: 0px 0px 12px 4px rgb(0 0 0 / 30%);
+                border-radius: 16px;
             }
 
             .artist-chip {
@@ -1343,7 +1378,12 @@
                 }
             }
 
+            .playlist-body.scrollbody .tabs .tab-content .tab-pane{
+                padding-right       : 16px;
+                width               : auto;
+                padding-left        : 0px;
 
+            }
             .well .playlist-time {
                 margin-top: 40px;
             }
@@ -1402,10 +1442,6 @@
         input[type=checkbox][switch]:checked {
             background-color: var(--checked);
             mix-blend-mode  : unset;
-        }
-
-        .cd-mediaitem-list-item:nth-child(odd) {
-            background: var(--oddItemsAccentCOlor);
         }
 
         .well:not(.artistfeed-well) {
@@ -1555,7 +1591,7 @@
     }
 
     .cd-mediaitem-list-item:nth-child(odd) {
-        background: var(--oddItemsAccentCOlor);
+        background: var(--color1);
     }
 
     .well:not(.artistfeed-well) {
